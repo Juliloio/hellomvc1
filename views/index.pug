@@ -1,0 +1,32 @@
+extends layout
+
+block content
+  h1 Hello MVC
+  p Ingresá el ID del usuario que querés buscar.
+  form.form-inline(action='/search' method='get')
+    div.form-group.mr-sm-3
+      input.form-control(type='text' name='id' placeholder='ID')
+    input.form-control.btn.btn-primary(type='submit' value='Buscar')
+  hr
+  pre= users
+  if users
+    table.table.table-striped
+      thead.thead-dark
+        th id
+        th Nombre
+        th Email
+        th Cumpleaños
+        th Edad
+      tbody    
+        each user in users
+          tr
+            td= user.id
+            td= user.name
+            td= user.mail
+            td= user.birthday.toLocaleDateString('es-AR')
+            td= user.age
+  else
+    h3 No hay resultados      
+  hr
+  h4 Más info en 
+    a(href='https://developer.mozilla.org/es/docs/Learn/Server-side/Express_Nodejs/Tutorial_local_library_website') MDN
