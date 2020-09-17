@@ -9,6 +9,3 @@ router.get('/search', controller.search)
 
 module.exports = router;
 
-// router
-const router = require('./routes/index');
-app.use('/', router);
