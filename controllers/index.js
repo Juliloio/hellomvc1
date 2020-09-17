@@ -1,13 +1,6 @@
 // controllers/index.js
 const User = require('../models/User');
 
-exports.home = (req, res) => {
-  res.send('Implementar');
-};
-
-exports.search = (req, res) => {
-  res.send('Implementar')
-}
 
 exports.home = (req, res) => {
   User.find().sort('id').exec((err, users) => {
