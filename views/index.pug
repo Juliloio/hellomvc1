@@ -3,7 +3,7 @@ extends layout
 block content
   h1 Hello MVC
   p Ingresá el ID del usuario que querés buscar.
-  form.form-inline(action='/search' method='get')
+   form.form-inline(action='/search' method='get')
     div.form-group.mr-sm-3
       input.form-control(type='text' name='id' placeholder='ID')
     input.form-control.btn.btn-primary(type='submit' value='Buscar')
